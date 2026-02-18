@@ -6,11 +6,11 @@ let tasks = [
   { id: 1, title: "Initial task", completed: true },
   { id: 2, title: "Install Git and Node.js", "completed": true },
   { id: 2, title: "Learn DevOps basics", completed: false }
-  
+
 ];
 
 app.get('/', (req, res) => {
-  res.json({ message: "DevOps Task Manager API is running..." });
+  res.json({ message: "DevOps Task Manager API is running (Lab 1)" });
 });
 
 app.get('/tasks', (req, res) => {
