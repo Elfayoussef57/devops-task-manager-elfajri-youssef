@@ -5,7 +5,7 @@ app.use(express.json());
 const tasksRouter = require('./routes/tasks');
 
 app.get('/', (req, res) => {
-  res.json({ message: "Welcome from FEATURE branch" });
+  console.log("Testing CI with a Pull Request");
 });
 
 app.use('/tasks', tasksRouter);
