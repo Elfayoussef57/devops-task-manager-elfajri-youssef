@@ -44,5 +44,5 @@ jobs:
           context: .
           push: true
           tags: |
-            ghcr.io/Elfayoussef57/task-manager-api:latest
-            ghcr.io/Elfayoussef57/task-manager-api:${{ github.sha }}
+            ghcr.io/elfayoussef57/task-manager-api:latest
+            ghcr.io/elfayoussef57/task-manager-api:${{ github.sha }}
