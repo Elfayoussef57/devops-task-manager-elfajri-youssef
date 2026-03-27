@@ -2,9 +2,10 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 
-// Connect to MongoDB
-mongoose.connect(process.env.MONGO_URL || 'mongodb://localhost:27017/tasksdb');
-
+// Only connect if MONGO_URL is provided (skips connection in test env)
+if (process.env.MONGO_URL) {
+  mongoose.connect(process.env.MONGO_URL);
+}
 // Define schema
 const Task = mongoose.model('Task', new mongoose.Schema({
   id: Number,
