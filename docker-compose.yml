@@ -1,0 +1,20 @@
+services:
+  # API service (Task Manager)
+  api:
+    build: . # Image built & delivered in Lab 4
+    ports:
+      - "3000:3000" # Expose API on localhost:3000
+    depends_on:
+      - db
+    environment:
+      - MONGO_URL=mongodb://db:27017/tasksdb
+
+# Database service (MongoDB)
+  db:
+    image: mongo:6 # Official MongoDB image
+    volumes:
+    # Persist database data across container restarts
+      - mongo_data:/data/db
+    # Named volumes definition
+volumes:
+  mongo_data: # Docker-managed persistent storage
